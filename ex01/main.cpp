@@ -1,44 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 18:07:49 by makacem           #+#    #+#             */
-/*   Updated: 2023/06/13 14:03:00 by makacem          ###   ########.fr       */
+/*   Created: 2023/06/13 14:07:05 by makacem           #+#    #+#             */
+/*   Updated: 2023/06/13 18:05:52 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-
-#define WHATEVER_HPP
-
-#include <iostream>
+#include "iter.hpp"
 
 template <typename T>
-void    swap(T &a, T &b)
+void    print(T const &a)
 {
-    T temp = a;
-    a = b;
-    b = temp;
+    std::cout << a << std::endl;
 }
 
-template <typename T>
-T   max(T &x, T &y)
+int main()
 {
-    if (x > y)
-        return x;
-    else
-        return y;
-}
+    int arr[] = {0, 1, 2, 3, 4};
+    
+    iter(arr, 5, print);
 
-template <typename T>
-T   min(T &x, T &y)
-{
-    if (x < y)
-        return x;
-    else
-        return y;
+    char arr2[] = {'a', 'b', 'c', 'd', 'e'};
+
+    iter(arr2, 5, print);
+
+    char arr3[] = "qwerty";
+
+    iter(arr3, 5, print);
 }
-#endif

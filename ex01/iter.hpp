@@ -1,44 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 18:07:49 by makacem           #+#    #+#             */
-/*   Updated: 2023/06/13 14:03:00 by makacem          ###   ########.fr       */
+/*   Created: 2023/06/13 14:07:07 by makacem           #+#    #+#             */
+/*   Updated: 2023/06/13 17:57:27 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
+#ifndef ITER_H
 
-#define WHATEVER_HPP
-
+#define ITER_H
 #include <iostream>
 
 template <typename T>
-void    swap(T &a, T &b)
+void    iter(T *array, int len, void (*func)(T const &elem))
 {
-    T temp = a;
-    a = b;
-    b = temp;
+    for(int i =0; i < len; i++)
+        func(array[i]);
+    
 }
 
-template <typename T>
-T   max(T &x, T &y)
-{
-    if (x > y)
-        return x;
-    else
-        return y;
-}
 
-template <typename T>
-T   min(T &x, T &y)
-{
-    if (x < y)
-        return x;
-    else
-        return y;
-}
 #endif
